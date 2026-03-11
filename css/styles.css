@@ -1,0 +1,83 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0a0f1e;
+    color: #e2e8f0;
+}
+
+::selection {
+    background-color: rgba(59, 130, 246, 0.3);
+    color: white;
+}
+
+.reveal-hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.gradient-accent {
+    background: linear-gradient(135deg, #60a5fa 0%, #2563eb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+@keyframes custom-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+.animate-custom-blink {
+    animation: custom-blink 1s step-end infinite;
+}
+
+@keyframes bounce-slow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+.animate-bounce-slow {
+    animation: bounce-slow 4s ease-in-out infinite;
+}
+.animate-bounce-slow-delay {
+    animation: bounce-slow 4s ease-in-out infinite;
+    animation-delay: 2s;
+}
+
+@keyframes ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.ticker-track {
+    animation: ticker 35s linear infinite;
+}
+
+.ticker-track:hover {
+    animation-play-state: paused;
+}
